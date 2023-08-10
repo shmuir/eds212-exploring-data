@@ -3,3 +3,36 @@ title: "Exploring Data"
 format: html
 editor: visual
 ---
+
+```{r}
+library(palmerpenguins)
+library(GGally)
+library(skimr)
+library(tidyverse)
+```
+
+## Basic Data Exploration
+
+```{r}
+names(penguins) #variable names
+dim(penguins) #dimensions of data
+summary(penguins) #summary stats
+head(penguins) #first 6 lines
+```
+
+```{r}
+skim(penguins)
+```
+
+-   would usually do these things in the console
+
+#### Pair Plot
+
+```{r}
+GGally::ggpairs(penguins)
+```
+
+
+
+
+

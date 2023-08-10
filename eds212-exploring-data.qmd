@@ -2,6 +2,8 @@
 title: "Exploring Data"
 format: html
 editor: visual
+execute: 
+  warning: false
 ---
 
 ```{r}
@@ -32,7 +34,24 @@ skim(penguins)
 GGally::ggpairs(penguins)
 ```
 
+## More Plots! (in ggplot2)
+
+```{r}
+ggplot(data = penguins, aes(flipper_length_mm)) +
+  geom_histogram(aes(fill = species), color = "black") +
+  facet_wrap(~ species) +
+  theme_linedraw()
+```
+
+```{r}
+ggplot(penguins, aes(species, bill_length_mm)) +
+  geom_boxplot(aes(fill = island)) +
+  geom_jitter(color = "magenta", alpha = 0.3, aes(size = bill_depth_mm)) +
+  theme_classic()
+```
 
 
-
+```{r}
+ggplot
+```
 
